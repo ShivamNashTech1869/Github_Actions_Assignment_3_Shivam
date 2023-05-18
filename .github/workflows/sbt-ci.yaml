@@ -1,0 +1,33 @@
+name: Github Actions Assignment 3
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Set up Java
+        uses: actions/setup-java@v2
+        with:
+          java-version: '11'
+          distribution: 'adopt'
+
+      - name: Set up sbt
+        uses: actions/setup-scala@v1
+        with:
+          java-version: '11'
+          sbt-version: '1.5.4'
+
+      - name: Build with sbt
+        run: sbt clean compile
+
+      - name: Test with sbt
+        run: sbt test
