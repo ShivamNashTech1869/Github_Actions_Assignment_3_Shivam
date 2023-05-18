@@ -21,10 +21,10 @@ jobs:
           distribution: 'adopt'
 
       - name: Set up sbt
-        uses: olafurpg/setup-scala@v12
-        with:
-          java-version: '11'
-          sbt-version: '1.5.4'
+        run: |
+          curl -sL "https://github.com/sbt/sbt/releases/download/v1.5.4/sbt-1.5.4.tgz" | tar zxvf - -C $HOME
+          echo "export PATH=\"$HOME/sbt/bin:$PATH\"" >> $HOME/.bashrc
+          source $HOME/.bashrc
 
       - name: Build with sbt
         run: |
