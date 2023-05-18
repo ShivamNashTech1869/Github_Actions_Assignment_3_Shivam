@@ -31,7 +31,7 @@ jobs:
           cd SbtWithGithubAction
           sbt clean compile
 
-      - name: Test with sbt
+      - name: Run Scala Code
         run: |
-          cd SbtWithGithubAction
-          sbt test
+          cd SbtWithGithubAction/src/main/scala
+          sbt "runMain DiamondPattern.scala"
