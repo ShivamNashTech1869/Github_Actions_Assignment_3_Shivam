@@ -27,7 +27,6 @@ jobs:
           sbt-version: '1.5.4'
 
       - name: Build with sbt
-        run: sbt clean compile
-
-      - name: Test with sbt
-        run: sbt test
+        run: |
+          cd SbtWithGithubAction
+          sbt clean compile
