@@ -32,4 +32,4 @@ jobs:
           sbt clean compile
 
       - name: Run Scala Code
-        run: sbt "runMain DiamondPattern.scala"
+        run: sbt "runMain DiamondPattern"
