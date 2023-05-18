@@ -31,14 +31,8 @@ jobs:
           cd SbtWithGithubAction
           sbt clean compile
 
-      - name: Run Scala Code and Generate Report
+      - name: Run Scala Code
         run: |
           cd SbtWithGithubAction
           sbt "runMain DiamondPattern"
      
-      - name: Store Report Artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: scala-report
-          path: report.html
-          retention-days: 30
