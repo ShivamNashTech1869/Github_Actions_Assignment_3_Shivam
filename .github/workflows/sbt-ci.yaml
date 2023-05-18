@@ -33,6 +33,7 @@ jobs:
 
       - name: Run Scala Code and Generate Report
         run: |
+          cd SbtWithGithubAction
           sbt "runMain DiamondPattern > SCreport.html"
           echo "::set-output name=report-path::SCreport.html"
 
