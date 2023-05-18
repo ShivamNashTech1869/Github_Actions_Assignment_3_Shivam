@@ -1,4 +1,4 @@
-name: Github Actions Assignment 3
+name: Scala Workflow
 
 on:
   push:
