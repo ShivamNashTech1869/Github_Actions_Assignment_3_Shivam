@@ -34,12 +34,11 @@ jobs:
       - name: Run Scala Code and Generate Report
         run: |
           cd SbtWithGithubAction
-          sbt "runMain DiamondPattern > SCreport.html"
-          echo "::set-output name=report-path::SCreport.html"
-
+          sbt "runMain DiamondPattern"
+     
       - name: Store Report Artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v2
         with:
           name: scala-report
-          path: ${{ steps.run-scala-code.outputs.report-path }}
+          path: report.html
           retention-days: 30
