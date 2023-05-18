@@ -21,7 +21,7 @@ jobs:
           distribution: 'adopt'
 
       - name: Set up sbt
-        uses: actions/setup-scala@v1
+        uses: olafurpg/setup-scala@v12
         with:
           java-version: '11'
           sbt-version: '1.5.4'
