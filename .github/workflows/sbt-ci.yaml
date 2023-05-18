@@ -30,3 +30,8 @@ jobs:
         run: |
           cd SbtWithGithubAction
           sbt clean compile
+
+      - name: Test with sbt
+        run: |
+          cd SbtWithGithubAction
+          sbt test
